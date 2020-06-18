@@ -1,0 +1,11 @@
+<div *ngIf="dataReady" class="chart">
+    <div class="chart-buttons">
+        <div (click)="showChart(-1)" class="chart-buttons_button chart-button-active"> Overall </div>
+        <div *ngFor="let item of chartData;let i=index" class="chart-buttons_button" (click)="showChart(i)">
+            {{ item.datasets[0].label }}
+        </div>
+    </div>
+    <div class="chart-charts">
+        <p-chart #chart id="chart" *ngIf="dataReady" type="radar" [data]="data"></p-chart>
+    </div>
+</div>

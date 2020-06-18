@@ -1,0 +1,24 @@
+<div *ngIf="!connected" class="chat-container">
+    <div *ngIf="connectionError; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <div class="connectionError">{{ connectionError }}</div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <div class="connectionSetName">Please set your name and press Connect!</div>
+    </ng-template>
+
+    <div class="chat-input">
+        <input type="text" id="inputMessage" placeholder="Your name" #inputMessage [attr.disabled]="(serverStatus!='online' || adminStatus!='online') ? '' : null">
+        <button id="buttonConnect" (click)="connect(inputMessage.value)" type="button" class="btn btn-primary" [attr.disabled]="(serverStatus!='online' || adminStatus!='online') ? '' : null">Connect</button>
+    </div>
+</div>
+
+<div *ngIf="connected" class="chat-container-online">
+    <div class="chat-messages" id="chat-container">
+        <app-chat-line *ngFor="let message of messages" [message]="message"></app-chat-line>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="inputMessage" #inputMessage>
+        <button (click)="sendMessage(inputMessage.value)" type="button" class="btn btn-primary">Send</button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<ng-container [ngSwitch]="message.from">
+
+    <ng-container *ngSwitchCase="'$self'">
+        <div class="chat-message_self">
+            <div class="chat-message-text">{{message.message}}</div>
+        </div>
+        <div class="chat-message-time_self">{{message.newDate | date: 'HH:mm'}}</div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'$system'">
+        <div class="chat-message_system">
+            <div class="chat-message-text">{{message.message}}</div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+        <div class="chat-message">
+            <div class="chat-message-user"> {{message.from}} </div>
+            <div class="chat-message-text">{{message.message}}</div>
+        </div>
+        <div class="chat-message-time">{{message.newDate| date: 'HH:mm'}}</div>
+    </ng-container>
+
+</ng-container>

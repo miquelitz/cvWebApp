@@ -1,0 +1,119 @@
+.experiences {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experiences-outer {
+    border: 1px solid white;
+    max-height: 700px;
+}
+
+.experiences-nav {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.experiences-container {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.experiences-container-item {
+    width: 100vw;
+    max-width: 760px;
+    min-height: 500px;
+    margin-left: 50vw;
+    transform: translateX(-50%);
+    position: relative;
+    transition: all 0.5s ease-out;
+    background-color: #a9cef1;
+    box-shadow: 20px 20px 0px lightcoral !important;
+    color: #2a4558;
+    font-weight: 500;
+}
+
+.experiences-container-item_header {
+    display: flex;
+    justify-content: space-between;
+    /* transform: scale(1.03); */
+    background-color: white;
+    color: #0a2c4c;
+    flex-wrap: wrap;
+}
+
+.experiences-container-item_header_date {
+    background-color: #73bcff;
+    color: white;
+    padding: 10px;
+}
+
+.experiences-container-item_at {
+    color: #60676d;
+    padding: 10px;
+}
+
+.experiences-container-item_position {
+    background-color: #73bcff;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.experiences-container-item_stactics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #72bcff;
+}
+
+.st_line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.st_line-label {
+    width: 20%;
+    text-align: center;
+}
+
+.st_line-bar {
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 80%;
+    background-color: #2b4358;
+}
+
+.st_line-bar-empty {
+    width: 0%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: lightcoral;
+    content: "";
+    transition: ease-in-out all 0.5s;
+}
+
+.st_line-bar-fill {
+    width: 50%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: lightcoral;
+    transition: ease-in-out all 0.5s;
+}
+
+.experiences-container-item_details {
+    background-color: #73bcff;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}

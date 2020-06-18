@@ -1,0 +1,41 @@
+<div *ngIf="experienceData" class="experiences">
+    <div class="experiences-outer">
+        <div class="experiences-nav">
+            <button class="button_contact" (click)="navExp(experience_item_pos-1)" type="button"><</button><button class="button_contact" (click)="navExp(experience_item_pos+1)" type="button">></button>
+        </div>
+        <div id="experiences-container" class="experiences-container">
+            <div *ngFor="let item of experienceData" class="experiences-container-item">
+                <div class="experiences-container-item_header">
+                    <div class="experiences-container-item_header_date">{{ item.dateFrom | date: 'dd/MM/yyyy' }} - {{ item.dateTo? (item.dateTo | date: 'dd/MM/yyyy') : "Now" }} </div>
+                    <div class="experiences-container-item_at">{{ item.company }}</div>
+                </div>
+                <div class="experiences-container-item_position">
+                    {{ item.position }}
+                </div>
+                <div class="experiences-container-item_stactics">
+                    <div class="st_line col-xl-6 col-md-12">
+                        <div class="st_line-label">Skill1</div>
+                        <div class="st_line-bar">
+                            <div class="st_line-bar-fill">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="st_line col-xl-6 col-md-12">
+                        <div class="st_line-label">Skill1</div>
+                        <div class="st_line-bar">
+                            <div class="st_line-bar-empty">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="st_line col-xl-6 col-md-12">
+                        <div class="st_line-label">Skill1</div>
+                        <div class="st_line-bar">
+                            <div class="st_line-bar-fill">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experiences-container-item_details">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

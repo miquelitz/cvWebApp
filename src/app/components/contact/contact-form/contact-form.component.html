@@ -1,0 +1,35 @@
+<form *ngIf="formReady" [formGroup]="formContacto" (ngSubmit)="submitForm()" class="example-form" class="p-3">
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" name="nombre" matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Telf</mat-label>
+                    <input formControlName="telf" name="apellidos" matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" name="apellidos" matInput>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        <mat-form-field class="example-full-width">
+            <mat-label>Message</mat-label>
+            <textarea formControlName="message" name="direccion" matInput placeholder="..."></textarea>
+        </mat-form-field>
+    </p>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()" mat-raised-button color="secondary">Close</button>
+        <button mat-button cdkFocusInitial mat-raised-button color="primary">Send</button>
+    </div>
+</form>

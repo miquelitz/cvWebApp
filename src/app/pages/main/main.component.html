@@ -1,0 +1,85 @@
+<header *ngIf="!(loading$ | async) && !(error$ | async)">
+    <nav>
+        <ul>
+            <li>
+                <a (click)="navigateSection('personal')" data-page="personal">Presentation</a>
+            </li>
+            <li>
+                <a (click)="navigateSection('skills')" data-page="skills">Skills</a>
+            </li>
+            <li>
+                <a (click)="navigateSection('experience')" data-page="experience">Experience</a>
+            </li>
+            <li>
+                <a (click)="navigateSection('other')" data-page="other">Other info</a>
+            </li>
+            <li>
+                <a (click)="navigateSection('contact')" data-page="contact">Contact me</a>
+            </li>
+            <div class="bubble">&nbsp;</div>
+        </ul>
+    </nav>
+</header>
+<ng-container *ngIf="!(loading$ | async); else loadingMain">
+    <ng-container *ngIf="!(error$ | async); else errorMain">
+        <div class="main" (wheel)="onScroll($event)" id="main">
+            <section data-index="0" class="section-flex" id="personal" active="true">
+                <div class="personal-data">
+                    <div class="personal_data-container">
+                        <div class="personal_data-inner-title ">
+                            <p class="title">Hi! my name is</p>
+                        </div>
+                        <div class="personal_data-inner ">
+                            <span>{{ cv?.name }} : {{ cv?.birthDate? calculate_age() : "" }} {{ cv?.location }}</span>
+                        </div>
+                        <div class="personal_data-inner-title ">
+                            <p class="title">i'm a</p>
+                        </div>
+                        <div class="personal_data-inner ">
+                            <span>{{ cv?.title }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="powered-container">
+                    <div class="text">
+                        Site powered by
+                    </div>
+                    <div class="images">
+                        <img src="../../../assets/angular-logo.png" alt="logo-angular">
+                        <img src="../../../assets/yii2-logo.png" alt="logo-yii2">
+                    </div>
+                </div>
+            </section>
+            <section data-index="1" class="section-flex" id="skills">
+                <app-skills *ngIf="skillsData.length>0" [skillsData]="skillsData"></app-skills>
+            </section>
+            <section data-index="2" id="experience">
+                <app-experience [experienceData]="cv.experiences"></app-experience>
+            </section>
+            <section data-index="3" class="section-flex" id="other">
+                <h2>Other info</h2>
+            </section>
+            <section data-index="4" class="section-flex" id="contact">
+                <app-contact></app-contact>
+            </section>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-template #errorMain>
+    <div class="main">
+        <section class="section-flex">
+            <img src="../../../assets/error.png">
+        </section>
+    </div>
+</ng-template>
+<ng-template #loadingMain>
+    <div class="main">
+        <section class="section-flex">
+            <div class="lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+    </div>
+</ng-template>

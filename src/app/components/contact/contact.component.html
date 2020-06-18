@@ -1,0 +1,24 @@
+<div class="contact">
+
+    <button class="button_contact">
+            Request Telephone number <i class="icono-boton fas fa-angle-double-right"></i>
+    </button>
+    <button class="button_contact" (click)="openChat()"> 
+            Chat <i class="icono-boton fas fa-angle-double-right"></i>
+    </button>
+    <div class="contact-form-title" (click)="animateFormContact()"> Contact form</div>
+    <div class="contact-form" id="contactForm">
+        <app-contact-form *ngIf="showContactForm"></app-contact-form>
+    </div>
+
+</div>
+
+<div class="contact-expandable-container" id="contact-expandable-container">
+    <div (click)="minimizeChat()" class="contact-expandable-container_toolbar">
+        <span>Chat</span>
+        <div class="minimize-button"><i class="fas fa-compress-alt"></i></div>
+    </div>
+    <div class="chat-window-container">
+        <app-chat *ngIf="chat_container_state == 'open' || chat_container_state == 'minimized'"></app-chat>
+    </div>
+</div>

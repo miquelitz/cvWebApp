@@ -1,0 +1,87 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 79px;
+    transition: all ease 0.5s;
+}
+
+.chat-container-online {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 269px;
+    animation-name: chat-open;
+    animation-duration: 0.5s;
+}
+
+@keyframes chat-open {
+    from {
+        height: 79px;
+    }
+    to {
+        height: 269px;
+    }
+}
+
+.connectionError,
+.connectionSetName {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.connectionError {
+    color: darkviolet;
+}
+
+.connectionSetName {
+    color: black;
+}
+
+.chat-messages {
+    background-color: white;
+    width: 100%;
+    max-width: 760px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+.chat-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+
+.chat-input input {
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    padding-right: 70px;
+    margin: 4px;
+    height: 36px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+}
+
+.chat-input button {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    height: 30px;
+    line-height: 13px;
+    background-color: #477394;
+    border: 0;
+}
+
+app-chat-line {
+    display: contents;
+}

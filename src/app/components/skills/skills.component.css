@@ -1,0 +1,31 @@
+.chart {
+    width: 100vw;
+    max-width: 760px;
+    background-color: #a9cef1;
+    box-shadow: 20px 20px 0px lightcoral !important;
+}
+
+.chart-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    color: #2a4558;
+    font-weight: 500;
+    /*border-bottom: 2px solid #477394;*/
+    background-color: #ffffff;
+}
+
+.chart-buttons_button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chart-button-active {
+    background-color: #73bcff;
+    color: white;
+}
+
+.chart-charts {
+    padding: 30px;
+}
